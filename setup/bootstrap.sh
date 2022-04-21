@@ -1,6 +1,13 @@
 #!/bin/sh
-set -e
+set -xe
 
-# Set up network
-echo "10.0.2.2  elasticsearch" >> /etc/hosts
-echo "127.0.0.1  kibana" >> /etc/hosts
+# Set up sys requirements
+sysctl -w vm.max_map_count=262144
+
+usermod -a -G docker vagrant # allow default user to do stuff
+
+mkdir -p .docker
+mkdir -p /mnt/data
+
+sudo chmod -R +r .docker/
+sudo chown -R 1000:1000 /mnt/data

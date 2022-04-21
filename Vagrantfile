@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provider "virtualbox" do |vbox|
     vbox.customize ["modifyvm", :id, "--audio", "none"]
-    vbox.memory = 8000
+    vbox.memory = 8200
     vbox.cpus = 4
     vbox.gui = false
   end
