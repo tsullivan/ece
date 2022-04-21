@@ -16,7 +16,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "kibana-reporting-ubuntu" do |ubuntu|
     ubuntu.vm.box = "ubuntu/focal64"
     ubuntu.vm.box_version = "20220419.0.0"
-    ubuntu.vm.hostname = "reporting-benchmark"
+    ubuntu.vm.hostname = "ece-testo"
 
     ubuntu.vm.provision "shell", inline: <<-SHELL
       apt-get update
