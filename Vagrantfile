@@ -20,7 +20,7 @@ Vagrant.configure("2") do |config|
 
     ubuntu.vm.provision "shell", inline: <<-SHELL
       apt-get update
-      apt-get install -y jq
+      apt-get install -y jq docker.io
     SHELL
 
     ubuntu.vm.provision "shell", inline: "sh /vagrant/setup/bootstrap.sh", env: {"VERSION" => ENV['VERSION']}
