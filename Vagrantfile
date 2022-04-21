@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provider "virtualbox" do |vbox|
     vbox.customize ["modifyvm", :id, "--audio", "none"]
-    vbox.memory = 8200
+    vbox.memory = 10000
     vbox.cpus = 4
     vbox.gui = false
   end
@@ -30,6 +30,6 @@ Vagrant.configure("2") do |config|
     SHELL
 
     # enable auto-sizing swap service
-    # ubuntu.vm.provision "shell", inline: "sudo apt-get install swapspace -y"
+    ubuntu.vm.provision "shell", inline: "sudo apt-get install swapspace -y"
   end
 end
