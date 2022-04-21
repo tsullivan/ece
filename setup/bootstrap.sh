@@ -11,3 +11,8 @@ mkdir -p /mnt/data
 
 sudo chmod -R +r .docker/
 sudo chown -R 1000:1000 /mnt/data
+
+cat << HELLO > /etc/profile.d/custom.sh
+echo \# ECE Install instructions: https://www.elastic.co/downloads/enterprise
+echo
+HELLO
